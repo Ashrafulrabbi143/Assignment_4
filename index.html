@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <header class="w-[80%] mx-auto">
+    <h1 class="text-3xl font-bold text-black my-3">Job Application Tracker</h1>
+    <div class="grid grid-cols-3 gap-8">
+      <div class="bg-[#F1F2F4] p-4">
+        <p>Total</p>
+        <p id="total">0</p>
+      </div>
+      <div class="bg-[#F1F2F4] p-4">
+        <p>Interview</p>
+        <p id="interviewCount">0</p>
+      </div>
+      <div class="bg-[#F1F2F4] p-4">
+        <p>Rejected</p>
+        <p id="rejectedCount">0</p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="my-5">
+  <main class="w-[80%] mx-auto">
+    <p class="font-bold">Available Jobs</p>
+    <div class="mb-5">
+      <button onclick="toggleStyle('All_filter_btn')" class=" bg-[#3B82F6] text-white px-5 py-2"
+        id="All_filter_btn">All</button>
+      <button onclick="toggleStyle('interview_filter_btn')" class=" bg-[#F1F2F4] px-5 py-2"
+        id="interview_filter_btn">Interview</button>
+      <button onclick="toggleStyle('rejected_filter_btn')" class=" bg-[#F1F2F4] px-5 py-2"
+        id="rejected_filter_btn">Rejected</button>
+    </div>
+    <!--filter card-->
+    <section id="filtered_section" class="hidden">
+
+    </section>
+
+
+    <section id="allCards" class="space-y-6">
+      <!--card 1-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+
+      <!--card 2-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 2</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+
+      <!--card 3-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 3</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+
+      <!--card 4-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 4</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+      <!--card 5-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 5</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+      <!--card 6-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 6</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+      <!--card 7-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 7</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+
+      <!--card 8-->
+      <div class="card flex justify-between border p-8">
+        <!--main part 1-->
+        <div class="space-y-5">
+          <!--part 1 -->
+          <div>
+            <p class="mobileName text-1xl font-bold">Mobile First Corp 8</p>
+            <p class="reactNative">React Native Developer</p>
+          </div>
+          <!--part 2-->
+          <div>
+            <p>Remote • Full-time • $130,000 - $175,000</p>
+          </div>
+          <!--part 3-->
+          <p class="status">Not Applied</p>
+          <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by
+            millions of users
+            worldwide.</p>
+          <div class="flex gap-5">
+            <button class="interview_btn bg-green-200 px-4 py-2">interview</button>
+            <button class="rejected_btn bg-red-200 px-4 py-2">Rejected</button>
+          </div>
+        </div>
+        <!--main part 2-->
+        <div>
+          <button id="btn_delete"><i class="fa-solid fa-calendar-xmark"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
